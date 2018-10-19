@@ -1,1 +1,1 @@
-web: java -jar "out\artifacts\Qanda_jar\Qanda.jar"
+web: java -jar "target\Qanda.jar"
