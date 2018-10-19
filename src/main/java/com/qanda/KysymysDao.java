@@ -1,4 +1,4 @@
-package main.java.com.qanda;
+package com.qanda;
 
 
 import java.sql.Connection;
@@ -16,7 +16,6 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
         this.database = database;
     }
 
-    @Override
     public Kysymys findOne(Integer key) throws SQLException {
         Connection conn = database.getConnection();
 
@@ -42,7 +41,6 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
         return k;
     }
 
-    @Override
     public List<Kysymys> findAll() throws SQLException {
         Connection conn = database.getConnection();
 
@@ -50,7 +48,7 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
 
         ResultSet rs = stmt.executeQuery();
 
-        ArrayList<Kysymys> lista = new ArrayList<>();
+        ArrayList<Kysymys> lista = new ArrayList<Kysymys>();
 
         while(rs.next()) {
             lista.add(new Kysymys(
@@ -74,7 +72,7 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
 
         ResultSet rs = stmt.executeQuery();
 
-        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<String> lista = new ArrayList<String>();
 
         while(rs.next()) {
             lista.add(rs.getString("kurssi"));
@@ -95,7 +93,7 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
 
         ResultSet rs = stmt.executeQuery();
 
-        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<String> lista = new ArrayList<String>();
 
         while(rs.next()) {
             lista.add(rs.getString("aihe"));
@@ -117,7 +115,7 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
 
         ResultSet rs = stmt.executeQuery();
 
-        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<String> lista = new ArrayList<String>();
 
         while(rs.next()) {
             lista.add(rs.getString("kysymysteksti"));
@@ -130,7 +128,6 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
         return lista;
     }
 
-    @Override
     public Kysymys saveOrUpdate(Kysymys object) throws SQLException {
         Connection conn = database.getConnection();
         Kysymys k = findByKurssiAiheKysymysTeksti(object.getKurssi(), object.getAihe(), object.getKysymysteksti());
@@ -149,7 +146,6 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
 
     }
 
-    @Override
     public void delete(Integer key) throws SQLException {
         new VastausDao(database).deleteVastausByKysymys(key);
         Connection conn = database.getConnection();
@@ -187,15 +183,15 @@ public class KysymysDao implements Dao<Kysymys, Integer>{
     // Juu...
     public HashMap<String, HashMap<String, List<Kysymys>>> createFilteredMap() throws SQLException{
         ArrayList<String> kurssit = (ArrayList<String>) findDistinctKurssi();
-        HashMap<String, HashMap<String, List<Kysymys>>> palautus = new HashMap<>();
+        HashMap<String, HashMap<String, List<Kysymys>>> palautus = new HashMap<String, HashMap<String, List<Kysymys>>>();
 
         for(int i = 0; i < kurssit.size(); i++) {
             ArrayList<String> aiheet = (ArrayList<String>) findDistinctAiheByKurssi(kurssit.get(i));
 
-            HashMap<String, List<Kysymys>> tmp = new HashMap<>();
+            HashMap<String, List<Kysymys>> tmp = new HashMap<String, List<Kysymys>>();
             for(int j = 0; j < aiheet.size(); j++) {
                 ArrayList<String> kysymykset = (ArrayList<String>) findDistinctKysymystekstiByKurssiAndAihe(kurssit.get(i), aiheet.get(j));
-                ArrayList<Kysymys> kysymysOliot = new ArrayList<>();
+                ArrayList<Kysymys> kysymysOliot = new ArrayList<Kysymys>();
                 for(String s : kysymykset) {
                     Kysymys k = findByKurssiAiheKysymysTeksti(kurssit.get(i), aiheet.get(j), s);
                     if (k!= null) kysymysOliot.add(k);

@@ -1,4 +1,4 @@
-package main.java.com.qanda;
+package com.qanda;
 
 import java.sql.SQLException;
 import java.util.List;

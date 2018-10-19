@@ -1,7 +1,6 @@
-package main.java.com.qanda;
+package com.qanda;
 
-import spark.ModelAndView;
-import spark.Spark;
+import spark.*;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 
 import java.sql.Connection;
@@ -43,81 +42,99 @@ public class Qanda {
         }
 
 
-        Spark.get("/sivu", (req, res) -> {
-            HashMap map = new HashMap<>();
-            map.put("kurssit", kDao.createFilteredMap());
-            return new ModelAndView(map, "index");
+        Spark.get("/sivu", new TemplateViewRoute() {
+            @Override
+            public ModelAndView handle(Request req, Response res) throws Exception {
+                HashMap<String, Object> map = new HashMap<String, Object>();
+                map.put("kurssit", kDao.createFilteredMap());
+                return new ModelAndView(map, "index");
+            }
         }, new ThymeleafTemplateEngine());
 
-        Spark.get("/del", (req, res) -> {
-            int i;
-            i = Integer.parseInt(req.queryParams("id"));
+        Spark.get("/del", new Route() {
+            @Override
+            public Object handle(Request req, Response res) throws Exception {
+                int i;
+                i = Integer.parseInt(req.queryParams("id"));
 
-            kDao.delete(i);
+                kDao.delete(i);
 
-            res.redirect("/sivu");
-            return "";
-        });
-
-        Spark.get("/luo", (req, res) -> {
-            String a, b, c;
-            a = req.queryParams("kurssi");
-            b = req.queryParams("aihe");
-            c = req.queryParams("kysymysteksti");
-
-            if (a.isEmpty() || b.isEmpty() || c.isEmpty()) {
                 res.redirect("/sivu");
                 return "";
             }
-
-
-            kDao.saveOrUpdate(new Kysymys(-1, a, b, c));
-            res.redirect("/sivu");
-            return "";
         });
 
-        Spark.get("/vastaus", (request, response) -> {
-            int id;
-            String teksti;
-            boolean totta;
-            try {
-                id = Integer.parseInt(request.queryParams("id"));
-            } catch (Exception e) {
+        Spark.get("/luo", new Route() {
+            @Override
+            public Object handle(Request req, Response res) throws Exception {
+                String a, b, c;
+                a = req.queryParams("kurssi");
+                b = req.queryParams("aihe");
+                c = req.queryParams("kysymysteksti");
+
+                if (a.isEmpty() || b.isEmpty() || c.isEmpty()) {
+                    res.redirect("/sivu");
+                    return "";
+                }
+
+
+                kDao.saveOrUpdate(new Kysymys(-1, a, b, c));
+                res.redirect("/sivu");
                 return "";
             }
-            if (request.queryParams("vastausteksti").equals("")) return "";
-            teksti = request.queryParams("vastausteksti");
-            totta = request.queryParams().contains("totta");
-
-
-            vDao.saveOrUpdate(new Vastaus(-1, kDao.findOne(id), teksti, totta));
-
-            response.redirect("/" + id);
-            return "";
         });
 
-        Spark.get("/delv", ((request, response) -> {
-            int id = Integer.parseInt(request.queryParams("id"));
-            Vastaus v = vDao.findOne(id);
-            if (v == null) return "";
-            int returnId = v.getKysymys().getId();
-            vDao.delete(id);
-            response.redirect("/" + returnId);
-            return "";
+        Spark.get("/vastaus", new Route() {
+            @Override
+            public Object handle(Request request, Response response) throws Exception {
+                int id;
+                String teksti;
+                boolean totta;
+                try {
+                    id = Integer.parseInt(request.queryParams("id"));
+                } catch (Exception e) {
+                    return "";
+                }
+                if (request.queryParams("vastausteksti").equals("")) return "";
+                teksti = request.queryParams("vastausteksti");
+                totta = request.queryParams().contains("totta");
+
+
+                vDao.saveOrUpdate(new Vastaus(-1, kDao.findOne(id), teksti, totta));
+
+                response.redirect("/" + id);
+                return "";
+            }
+        });
+
+        Spark.get("/delv", (new Route() {
+            @Override
+            public Object handle(Request request, Response response) throws Exception {
+                int id = Integer.parseInt(request.queryParams("id"));
+                Vastaus v = vDao.findOne(id);
+                if (v == null) return "";
+                int returnId = v.getKysymys().getId();
+                vDao.delete(id);
+                response.redirect("/" + returnId);
+                return "";
+            }
         }));
 
-        Spark.get("/:id", (request, response) -> {
-            int id;
-            HashMap map = new HashMap<>();
-            try {
-                id = Integer.parseInt(request.params("id"));
-            } catch(Exception e) {
-                response.redirect("/sivu");
+        Spark.get("/:id", new TemplateViewRoute() {
+            @Override
+            public ModelAndView handle(Request request, Response response) throws Exception {
+                int id;
+                HashMap<String, Object> map = new HashMap<String, Object>();
+                try {
+                    id = Integer.parseInt(request.params("id"));
+                } catch (Exception e) {
+                    response.redirect("/sivu");
+                    return new ModelAndView(map, "kysymys");
+                }
+                map.put("vastaukset", vDao.findByKysymysId(id));
+                map.put("kysymys", kDao.findOne(id));
                 return new ModelAndView(map, "kysymys");
             }
-            map.put("vastaukset", vDao.findByKysymysId(id));
-            map.put("kysymys", kDao.findOne(id));
-            return new ModelAndView(map, "kysymys");
         }, new ThymeleafTemplateEngine());
 
     }

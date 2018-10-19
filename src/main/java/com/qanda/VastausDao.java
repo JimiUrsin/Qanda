@@ -1,4 +1,4 @@
-package main.java.com.qanda;
+package com.qanda;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -50,7 +50,7 @@ public class VastausDao implements Dao<Vastaus, Integer> {
 
         ResultSet rs = stmt.executeQuery();
 
-        ArrayList<Vastaus> lista = new ArrayList<>();
+        ArrayList<Vastaus> lista = new ArrayList<Vastaus>();
 
         while(rs.next()) {
             lista.add(new Vastaus(
@@ -126,7 +126,7 @@ public class VastausDao implements Dao<Vastaus, Integer> {
         stmt.setInt(1, kysymysId);
         ResultSet rs = stmt.executeQuery();
 
-        ArrayList<Vastaus> lista = new ArrayList<>();
+        ArrayList<Vastaus> lista = new ArrayList<Vastaus>();
 
         while(rs.next()) {
             lista.add(new Vastaus(

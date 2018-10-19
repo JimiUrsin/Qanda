@@ -1,4 +1,4 @@
-package main.java.com.qanda;
+package com.qanda;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

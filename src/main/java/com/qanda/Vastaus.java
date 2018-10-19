@@ -1,4 +1,4 @@
-package main.java.com.qanda;
+package com.qanda;
 
 public class Vastaus {
     private int id;
