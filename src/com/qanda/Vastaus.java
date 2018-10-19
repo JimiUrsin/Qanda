@@ -2,13 +2,13 @@ package com.qanda;
 
 public class Vastaus {
     private int id;
-    private int kysymys_id;
+    private Kysymys kysymys;
     private String vastausteksti;
     private boolean oikein;
 
-    public Vastaus(int id, int kysymys_id, String vastausteksti, boolean oikein) {
+    public Vastaus(int id, Kysymys kysymys, String vastausteksti, boolean oikein) {
         this.id = id;
-        this.kysymys_id = kysymys_id;
+        this.kysymys = kysymys;
         this.vastausteksti = vastausteksti;
         this.oikein = oikein;
     }
@@ -17,8 +17,8 @@ public class Vastaus {
         return id;
     }
 
-    public int getKysymys_id() {
-        return kysymys_id;
+    public Kysymys getKysymys() {
+        return kysymys;
     }
 
     public String getVastausteksti() {
