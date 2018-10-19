@@ -1,1 +1,1 @@
-web: java -jar "target\Qanda.jar"
+web: java -cp target/classes/:target/dependency/* com.qanda.Qanda
