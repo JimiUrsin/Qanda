@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${kysymys.kysymysteksti}"></title>
+</head>
+<body>
+    <h2 th:text="${kysymys.kysymysteksti}"></h2>
+    <h3 th:text="'Kurssi: ' + ${kysymys.kurssi}"></h3>
+    <h3 th:text="'Aihepiiri: ' + ${kysymys.aihe}"></h3>
+    <ul th:each="vastaus : ${vastaukset}">
+        <li>
+            <span th:text="${vastaus.vastausteksti}"></span>
+            <strong th:if="${vastaus.oikein != false}">Oikein</strong>
+            <strong th:if="${vastaus.oikein == false}">Väärin</strong>
+            <form action="delv">
+                <input type="hidden" name="id" th:value="${vastaus.id}">
+                <input type="submit" value="Poista">
+            </form>
+        </li>
+    </ul>
+
+    <!-- Vastauksen lisäyslogiikka-->
+
+    <h2>Luo uusi vastausvaihtoehto</h2>
+
+    <form action="/vastaus">
+        <table>
+            <tr>
+                <td>
+                    Vastausteksti:
+                </td>
+                <td>
+                    <input type="text" name="vastausteksti"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Oikein:
+                </td>
+                <td>
+                    <input type="checkbox" name="totta"/>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" name="id" th:value="${kysymys.id}">
+
+        <input type="submit" value="Luo"/>
+    </form>
+</body>
+</html>
