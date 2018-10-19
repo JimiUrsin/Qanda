@@ -1,0 +1,1 @@
+web: java -jar "out\artifacts\Qanda_jar\Qanda.jar"
