@@ -140,7 +140,7 @@ public class Qanda {
                 }
                 map.put("vastaukset", vDao.findByKysymysId(id));
                 map.put("kysymys", kDao.findOne(id));
-                return new ModelAndView(map, "index");
+                return new ModelAndView(map, "kysymys");
             }
         }, new ThymeleafTemplateEngine());
 

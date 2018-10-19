@@ -7,17 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34dbf954-2aad-4708-a374-15638868a1a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/kysymys.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/qanda/Database.class" afterPath="$PROJECT_DIR$/target/classes/com/qanda/Database.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$1.class" afterPath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$2.class" afterPath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$3.class" afterPath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$4.class" afterPath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$5.class" afterPath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$6.class" afterPath="$PROJECT_DIR$/target/classes/com/qanda/Qanda$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/qanda/Qanda.class" afterPath="$PROJECT_DIR$/target/classes/com/qanda/Qanda.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qanda/Qanda.java" afterPath="$PROJECT_DIR$/src/main/java/com/qanda/Qanda.java" />
     </list>
@@ -68,27 +57,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Qanda.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Qanda.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qanda/Qanda.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+            <state relative-caret-position="465">
+              <caret line="141" column="41" lean-forward="true" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
               <folding>
-                <element signature="method#handle#0;class#2254:2572" expanded="true" />
-                <element signature="method#handle#0;class#2606:3205" expanded="true" />
-                <element signature="method#handle#0;class#3243:4021" expanded="true" />
-                <element signature="method#handle#0;class#4057:4524" expanded="true" />
-                <element signature="method#handle#0;class#4559:5249" expanded="true" />
+                <element signature="method#handle#0;class#1709:2122" expanded="true" />
+                <element signature="method#handle#0;class#2187:2505" expanded="true" />
+                <element signature="method#handle#0;class#2539:3138" expanded="true" />
+                <element signature="method#handle#0;class#3176:3954" expanded="true" />
+                <element signature="method#handle#0;class#3990:4457" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -485,11 +474,19 @@
       <option name="project" value="LOCAL" />
       <updated>1539952526483</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Trying to get resources to work">
+      <created>1539954742790</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1539954742790</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -504,7 +501,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -533,7 +530,8 @@
     <MESSAGE value="Heroku JDBC compatibility" />
     <MESSAGE value="Procfile for Heroku" />
     <MESSAGE value="Maven plugin for Heroku to make sure it downloads all dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maven plugin for Heroku to make sure it downloads all dependencies" />
+    <MESSAGE value="Trying to get resources to work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to get resources to work" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1028,25 +1026,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qanda/Qanda.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
-          <folding>
-            <element signature="method#handle#0;class#2254:2572" expanded="true" />
-            <element signature="method#handle#0;class#2606:3205" expanded="true" />
-            <element signature="method#handle#0;class#3243:4021" expanded="true" />
-            <element signature="method#handle#0;class#4057:4524" expanded="true" />
-            <element signature="method#handle#0;class#4559:5249" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qanda/Qanda.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="465">
+          <caret line="141" column="41" lean-forward="true" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
+          <folding>
+            <element signature="method#handle#0;class#1709:2122" expanded="true" />
+            <element signature="method#handle#0;class#2187:2505" expanded="true" />
+            <element signature="method#handle#0;class#2539:3138" expanded="true" />
+            <element signature="method#handle#0;class#3176:3954" expanded="true" />
+            <element signature="method#handle#0;class#3990:4457" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
