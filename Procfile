@@ -1,1 +1,1 @@
-web: java -cp target/classes/:target/dependency/* com.qanda.Qanda
+web: java -cp target/classes/:target/dependency/*:src/main/resources/ com.qanda.Qanda

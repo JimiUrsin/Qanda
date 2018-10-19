@@ -26,6 +26,7 @@ public class Qanda {
             System.exit(0);
         }
 
+
         KysymysDao kDao = new KysymysDao(database);
         VastausDao vDao = new VastausDao(database);
 
@@ -52,6 +53,7 @@ public class Qanda {
             public ModelAndView handle(Request req, Response res) throws Exception {
                 HashMap<String, Object> map = new HashMap<String, Object>();
                 map.put("kurssit", kDao.createFilteredMap());
+                ModelAndView mav = new ModelAndView(map, "index");
                 return new ModelAndView(map, "index");
             }
         }, new ThymeleafTemplateEngine());
@@ -138,7 +140,7 @@ public class Qanda {
                 }
                 map.put("vastaukset", vDao.findByKysymysId(id));
                 map.put("kysymys", kDao.findOne(id));
-                return new ModelAndView(map, "kysymys");
+                return new ModelAndView(map, "index");
             }
         }, new ThymeleafTemplateEngine());
 
